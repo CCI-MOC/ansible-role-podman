@@ -1,0 +1,11 @@
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+  - name: check that podman is installed
+    command: rpm -q podman
+    register: podman_check
+
+  - name: assert that podman is installed
+    assert:
+      that: podman_check is success

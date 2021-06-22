@@ -1,0 +1,5 @@
+- name: install podman
+  become: true
+  package:
+    name: "{{ podman_packages }}"
+    state: installed
